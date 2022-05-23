@@ -2,7 +2,7 @@ from typing import List
 import string
 import logging as log
 
-log.basicConfig(filename='wordle.log', encoding='utf-8', level=log.DEBUG)
+log.basicConfig(filename='wordle.log', encoding='UTF-8', level=log.DEBUG)
 
 def is_word_length_size(word: str, size: int):
     return len(word) == size
