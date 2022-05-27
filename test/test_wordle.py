@@ -88,3 +88,8 @@ def test_three_wordle_candidates():
     x = wordle_candidates([("TREND", "00110"), ("UNCLE", "01001"), ("NAMES","10120")])
     assert("MONEY" in x)
 
+def test_parse_string_to_list():
+    wordle_string = "{ \"HATER\": \"01101\", \"TRACK\": \"21200\" }"
+    x = parse_wordle_string(wordle_string)
+    assert(x[0][0] == "HATER")
+    assert(len(x) == 2)

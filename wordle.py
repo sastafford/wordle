@@ -1,8 +1,14 @@
 from typing import List
 import string
 import logging as log
+import json
 
-log.basicConfig(filename='wordle.log', encoding='UTF-8', level=log.DEBUG)
+log.basicConfig(
+    handlers=[log.FileHandler(filename="wordle.log", encoding='utf-8', mode='a+')],
+    format="%(asctime)s %(name)s:%(levelname)s:%(message)s", 
+    datefmt="%F %A %T", 
+    level=log.INFO
+)
 
 def is_word_length_size(word: str, size: int):
     return len(word) == size
@@ -70,6 +76,11 @@ def get_dictionary() -> List[str]:
     
     f_words.close()
     return words_no_newlines
+
+def parse_wordle_string(wordle_string: str) -> List[tuple]:
+    wordle_json = json.loads(wordle_string)
+    return [i for i in wordle_json.items()]
+
 
 def wordle_candidates(wordle_guesses: List[tuple]) -> List:
     log.debug(wordle_guesses)
