@@ -1,3 +1,5 @@
 wordle.egg-info/
 build/
 pyproject.toml
+
+wordle.log
