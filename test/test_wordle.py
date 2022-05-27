@@ -71,7 +71,7 @@ def test_permutations_with_letters():
 
 def test_dictionary():
     dictionary = get_dictionary()
-    assert(len(dictionary) > 20000)
+    assert(len(dictionary) > 5000)
 
 def test_letters_not_in_word():
     wordle_guess = [("A", 0), ("B", 1), ("C", 0)]
