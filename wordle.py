@@ -1,14 +1,9 @@
 from typing import List
 import string
-import logging as log
+import logging
 import json
 
-log.basicConfig(
-    handlers=[log.FileHandler(filename="wordle.log", encoding='utf-8', mode='a+')],
-    format="%(asctime)s %(name)s:%(levelname)s:%(message)s", 
-    datefmt="%F %A %T", 
-    level=log.INFO
-)
+log = logging.getLogger("wordle")
 
 def is_word_length_size(word: str, size: int):
     return len(word) == size
