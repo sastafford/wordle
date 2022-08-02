@@ -3,3 +3,4 @@ build/
 pyproject.toml
 
 *wordle.log
+__pycache__
